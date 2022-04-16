@@ -5,8 +5,7 @@ using UnityEngine;
 
 public class CharacterSkinManager : MonoBehaviour
 {
-    public bool[] isSold = new bool[9];
-    [SerializeField] private GameObject[] skins;
+    [SerializeField] private GameObject[] characters;
 
     public static CharacterSkinManager instance;
 
@@ -14,13 +13,12 @@ public class CharacterSkinManager : MonoBehaviour
     {
         instance = this;
     }
-    
     public void EquipSkin(int index)
     {
-        foreach (var item in skins)
+        foreach (var item in characters)
         {
             item.SetActive(false);
         }
-        skins[index].SetActive(true);
+        characters[index].SetActive(true);
     }
 }

@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     public bool isGameStart;
     [SerializeField] private GameObject player;
     private int _gold;
-
+    [SerializeField]private int _firstTime = 0;
 
     public static GameManager instance;
     
@@ -22,6 +22,20 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        _firstTime = PlayerPrefs.GetInt("FirstTime");
+        //The app will run once opened.
+        if (_firstTime == 0)
+        {
+            Debug.Log("Kaydettim");
+            PlayerPrefs.SetInt("FirstTime",1);
+            SaveGame.instance.SavePlayerPrefs();
+            _firstTime = PlayerPrefs.GetInt("FirstTime");
+        }
+        else
+        {
+            Debug.Log("Bastım");
+//            UIManager.instance.UpdateUIMarket();
+        }
     }
     public void GameState(bool gameState)
     {
@@ -31,11 +45,15 @@ public class GameManager : MonoBehaviour
     
     public void AddGold(int amount)
     {
-        _gold += amount;
+        int tempGold = PlayerPrefs.GetInt("Gold");
+        _gold = tempGold + amount;
+        PlayerPrefs.SetInt("Gold",_gold);
     }
 
     public void Purchase(int amount)
     {
-        _gold -= amount;
+        int tempGold = PlayerPrefs.GetInt("Gold");
+        _gold = tempGold - amount;
+        PlayerPrefs.SetInt("Gold",_gold);
     }
 }

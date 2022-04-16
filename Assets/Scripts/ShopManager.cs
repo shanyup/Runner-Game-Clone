@@ -16,8 +16,8 @@ public class ShopManager : MonoBehaviour
         if (GameManager.instance.Gold >= CharacterStats[index].SkinSettings.CharacterPrice)
         {
             GameManager.instance.Purchase(CharacterStats[index].SkinSettings.CharacterPrice);
-            CharacterSkinManager.instance.isSold[index] = true;
-            UIManager.instance.UIBorderChange(index);
+            SaveGame.instance.SaveBuyButton(index);
+            UIManager.instance.UIButtonChange(index);
         }
         else
         {

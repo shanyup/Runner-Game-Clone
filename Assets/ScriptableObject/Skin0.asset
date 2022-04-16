@@ -12,3 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0aa90d3415939a4f9cc51272952b128, type: 3}
   m_Name: Skin0
   m_EditorClassIdentifier: 
+  SkinSettings:
+    CharacterSprite: {fileID: 0}
+    CharacterName: Business Man Shirt
+    CharacterPrice: 0

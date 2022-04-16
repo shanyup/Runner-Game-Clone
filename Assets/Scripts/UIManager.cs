@@ -7,6 +7,10 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
+    public SkinCreator[] Skins;
+    public Image[] CharacterSprite;
+    public TextMeshProUGUI[] CharacterName;
+    public TextMeshProUGUI[] CharacterPrice;
     public Button[] BuyButtons;
     public Button[] EquipButtons;
     public GameObject[] BorderList;
@@ -34,7 +38,30 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    public void UIBorderChange(int index)
+    private void UpdateSkins()
+    {
+        for (int i = 0; i < Skins.Length; i++)
+        {
+            CharacterSprite[i].sprite = Skins[i].SkinSettings.CharacterSprite;
+            CharacterName[i].text = Skins[i].SkinSettings.CharacterName;
+            CharacterPrice[i].text = Skins[i].SkinSettings.CharacterPrice.ToString();
+        }
+    }
+    public void UpdateUIMarket()
+    {
+        UpdateSkins();
+        /*for (int i = 0; i < BuyButtons.Length; i++)
+        {
+            string tempIndex = "characterSkin" + i;
+            Debug.Log(tempIndex);
+            int temp = PlayerPrefs.GetInt(tempIndex);
+            if (temp == 1)
+            {
+                BuyButtons[i].interactable = false;
+            }
+        }*/
+    }
+    public void UIButtonChange(int index)
     {
         BorderList[index].SetActive(false);
         SoldBorderList[index].SetActive(true);
