@@ -9,19 +9,20 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject player;
     private int _gold;
 
+
+    public static GameManager instance;
+    
     public int Gold
     {
         get { return _gold;}
         set { _gold = value; }
     }
-
-    public static GameManager instance;
-
+    
+    
     private void Awake()
     {
         instance = this;
     }
-
     public void GameState(bool gameState)
     {
         isGameStart = gameState;
