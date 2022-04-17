@@ -32,6 +32,12 @@ public class SaveGame : MonoBehaviour
         PlayerPrefs.SetInt("Gold",0);
 
         #endregion
+
+        #region Achievement
+
+        //Will be add.
+
+        #endregion
         PlayerPrefs.Save();
     }
 

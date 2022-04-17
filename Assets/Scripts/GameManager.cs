@@ -26,14 +26,12 @@ public class GameManager : MonoBehaviour
         //The app will run once opened.
         if (_firstTime == 0)
         {
-            Debug.Log("Kaydettim");
             PlayerPrefs.SetInt("FirstTime",1);
             SaveGame.instance.SavePlayerPrefs();
             _firstTime = PlayerPrefs.GetInt("FirstTime");
         }
         else
-        {
-            Debug.Log("Bastım");
+        { 
 //            UIManager.instance.UpdateUIMarket();
         }
     }

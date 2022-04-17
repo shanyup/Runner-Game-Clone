@@ -7,6 +7,8 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
+    public GameObject WinPanel, LosePanel;
+    
     public SkinCreator[] Skins;
     public Image[] CharacterSprite;
     public TextMeshProUGUI[] CharacterName;
@@ -15,29 +17,26 @@ public class UIManager : MonoBehaviour
     public Button[] EquipButtons;
     public GameObject[] BorderList;
     public GameObject[] SoldBorderList;
+    
+    [SerializeField]private TextMeshProUGUI _scoreText;
+    [SerializeField]private TextMeshProUGUI _high_scoreText;
     [SerializeField] private TextMeshProUGUI _errorText;
-    [SerializeField] private TextMeshProUGUI _scoreText;
-    [SerializeField] private TextMeshProUGUI _high_scoreText;
-
+    
     public static UIManager instance;
 
     private void Awake()
     {
         instance = this;
     }
+    
 
-    private void Update()
+    public void ScoreUpdate(int scoreValue)
     {
-        if (GameManager.instance.isGameStart)
-        {
-            //CurrentScore will change
-        }
-        else if (!GameManager.instance.isGameStart)
-        {
-            //Highscore will change
-        }
+        _scoreText.text = scoreValue.ToString();
     }
-
+    
+    //Highscore controll be add.
+    
     private void UpdateSkins()
     {
         for (int i = 0; i < Skins.Length; i++)
@@ -49,8 +48,8 @@ public class UIManager : MonoBehaviour
     }
     public void UpdateUIMarket()
     {
-        UpdateSkins();
-        /*for (int i = 0; i < BuyButtons.Length; i++)
+        //UpdateSkins();
+        for (int i = 0; i < BuyButtons.Length; i++)
         {
             string tempIndex = "characterSkin" + i;
             Debug.Log(tempIndex);
@@ -59,7 +58,7 @@ public class UIManager : MonoBehaviour
             {
                 BuyButtons[i].interactable = false;
             }
-        }*/
+        }
     }
     public void UIButtonChange(int index)
     {
