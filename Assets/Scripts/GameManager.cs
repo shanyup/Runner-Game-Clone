@@ -32,9 +32,15 @@ public class GameManager : MonoBehaviour
         }
         else
         { 
-//            UIManager.instance.UpdateUIMarket();
+            //
         }
     }
+
+    private void Start()
+    {
+        UIManager.instance.UpdateUIMarket();
+    }
+
     public void GameState(bool gameState)
     {
         isGameStart = gameState;

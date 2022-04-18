@@ -12,3 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0aa90d3415939a4f9cc51272952b128, type: 3}
   m_Name: Skin3
   m_EditorClassIdentifier: 
+  SkinSettings:
+    CharacterSprite: {fileID: 21300000, guid: 4cd4dcb82ef3dfd479f670aeb13cc639, type: 3}
+    CharacterName: Female Coat
+    CharacterPrice: 300

@@ -12,3 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0aa90d3415939a4f9cc51272952b128, type: 3}
   m_Name: Skin5
   m_EditorClassIdentifier: 
+  SkinSettings:
+    CharacterSprite: {fileID: 21300000, guid: c01676f124c74824293393a1a5722416, type: 3}
+    CharacterName: Female Police
+    CharacterPrice: 300

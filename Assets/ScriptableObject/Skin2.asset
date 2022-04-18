@@ -12,3 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0aa90d3415939a4f9cc51272952b128, type: 3}
   m_Name: Skin2
   m_EditorClassIdentifier: 
+  SkinSettings:
+    CharacterSprite: {fileID: 21300000, guid: b640ed369e7732f4a8b5fdb857706e31, type: 3}
+    CharacterName: Business Woman
+    CharacterPrice: 300

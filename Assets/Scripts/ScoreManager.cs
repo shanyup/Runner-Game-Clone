@@ -24,7 +24,7 @@ public class ScoreManager : MonoBehaviour
         }
     }
 
-    public void ScoreCounter()
+    private void ScoreCounter()
     {
         _currentScore += (int)(Time.deltaTime * _scoreCounter);
     }

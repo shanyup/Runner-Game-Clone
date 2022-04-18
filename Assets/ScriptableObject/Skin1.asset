@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Skin1
   m_EditorClassIdentifier: 
   SkinSettings:
-    CharacterSprite: {fileID: 0}
+    CharacterSprite: {fileID: 21300000, guid: 4f5c1e047c5db7c4084678110f4b80e5, type: 3}
     CharacterName: Business Man Suit
-    CharacterPrice: 0
+    CharacterPrice: 300
